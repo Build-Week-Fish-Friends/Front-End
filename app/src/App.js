@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <h2>Fish Friends Build Week</h2>
-        
         <LoginForm />
         <SignUp />
       {/* Hello everyone! this week we will be working on fish friends!  */}
