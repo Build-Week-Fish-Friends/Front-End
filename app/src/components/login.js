@@ -16,8 +16,7 @@ const LoginForm = ({props, values, errors, touched, status}) => {
 
     return (
         <div className = "login">
-            {/* <h2>Login</h2> */}
-            <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>Get Started</Button>
+            <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>Login</Button>
             <Collapse isOpen={isOpen}>
             <Card>
                 <CardBody>
