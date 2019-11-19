@@ -2,10 +2,11 @@ import React from 'react';
 
 import {Route, Switch} from 'react-router-dom'
 
-import LoginForm from './components/login';
-import SignUp from './components/signup';
+import Login from './components/Login';
+import SignUp from './components/Signup';
 import Dashboard from './components/Dashboard'
 import PrivateRoute from './components/PrivateRoute'
+import Landing from './components/Landing'
 
 import './App.css';
 
@@ -14,13 +15,17 @@ function App() {
     <div className="App">
       <h2>Fish Friends Build Week</h2>
       <Switch>
+
+          
+          <Route exact path="/" component={Landing}/>
           <Route path="/register" component={SignUp} />
-          <Route path="/login" component={LoginForm} />
+          <Route path="/login" component={Login} />
+
+
           <PrivateRoute path="/dashboard" component={Dashboard} />
       </Switch>
 
-        <LoginForm />
-        <SignUp />
+      {/* feel free to move these around however you wish(im just going for functionality) */}
       {/* Hello everyone! this week we will be working on fish friends!  */}
 
       {/* here is our product: https://docs.google.com/document/d/1Ozyf3g8RX9Rur8l6KFswSJjNF3E-dJ1fR25kX-Nv_4k/edit#heading=h.on2hvskyc3k9 */}

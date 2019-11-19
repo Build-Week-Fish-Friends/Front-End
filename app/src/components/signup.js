@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { register } from '../actions'
 import { connect } from 'react-redux'
 
@@ -8,11 +8,12 @@ import '../App.css'
 const Register = (props) => {
     
     const [registerUser, setRegisterUser] = useState({
-        username: '',
-        password: '',
+        // these will be set to blank once AUth is working correctly
+        username: 'User',
+        password: 'pword',
     })
 
-    const handleChanges = event => {
+    const handleChange = event => {
         setRegisterUser({
             ...registerUser,
             [event.target.name]: event.target.value
@@ -25,26 +26,29 @@ const Register = (props) => {
     }
     return (
         <>
+             <h3>Signup</h3>
            <form onSubmit={handleSubmit}>
                 <label>
                     Username
+                    <br />
                     <input
-                        name="name"
+                         name="name"
                         type="text"
                         value={registerUser.username}
-                        placeholder="Elton John"
-                        onChange={handleChanges}
+                        placeholder="epicAngler33"
+                        onChange={handleChange}
                      />
                 </label>
                 <br />
                 <label>
                     password
+                    <br />
                     <input
                         name="password"
                         type="password"
                         value={registerUser.password}
                         placeholder="password"
-                        onChange={handleChanges}
+                        onChange={handleChange}
                      />
                 </label>
                 <br />
