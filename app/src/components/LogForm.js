@@ -13,5 +13,12 @@ const AddLogForm = (props) => {
         location: '',
         startTime: '',
         totalTime: '',
+        numFish: '', // should be an integer 
+        typeFish: [], // should be an list of types of fish caught
     })
+
+
+    return (
+        // build form here
+    )
 }
