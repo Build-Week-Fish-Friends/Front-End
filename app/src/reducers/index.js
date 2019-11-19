@@ -19,40 +19,40 @@ export const reducer = (state = initialState, action ) => {
     switch(action.type){
         case REQUEST_START:
             return{
-                ...state,
-                isFetching: true,
+                 ...state,
+                 isFetching:true
             }
-        case REQUEST_FAILURE:
+       case REQUEST_FAILURE: 
             return{
-                ...state,
-                isFetching: false,
+                 ...state,
+                 isFetching:false
             }
-        case REGISTER_FAILURE:
-            return {
-                ...state,
-                isRegistering: false,
-                isSubmitting: false,
-            }
-        case REGISTER_SUCCESS:
-            return {
-                ...state,
-                isRegistering: false,
-                isSubmitting: true,
-            }
-        case REGISTER_START:
+       case LOGIN_SUCCESS:
             return{
-                ...state,
-                isSubmitting: false,
-                isRegistering: true,
-                    }   
+                 ...state,
+                 isRegistering: false,
+                 isFetching:false,
+                 isLoggedIn:true
+            }
+       case REGISTER_START:
+            return{
+                 ...state,
+                 isRegistering:true, 
+                 isSubmitting: false
+            }
+       case REGISTER_SUCCESS:
+            return{
+                 ...state,
+                 isRegistering: false,
+                 isSubmitting: true
+            }
+       case REGISTER_FAILURE:
+            return{
+                 ...state,
+                 isRegistering: false,
+                 isSubmitting: false
+            }
 
-        case LOGIN_SUCCESS:
-            return{
-                ...state,
-                isRegistering: false,
-                isFetching: false,
-                isLoggedIn: true,
-                }
     default:
         return state;
     }
