@@ -8,7 +8,7 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS"
 export const login = (credentials, history) => (dispatch) => {
     dispatch({type: REQUEST_START})
     axiosWithAuth()
-        .post('/register', credentials)
+        .post('/login', credentials)
         .then(res => {
             console.log(res)
             localStorage.setItem("token", res.data.token)
@@ -25,5 +25,15 @@ export const REGISTER_FAILURE = 'REGISTER_FAILURE'
 
 export const register = ( registerUser, history) => (dispatch) => {
     dispatch({ type: REGISTER_START })
-    axios.post("auth/register", registerUser)
+    axiosWithAuth()
+        .post("auth/register", registerUser)
+        .then( res => {
+            console.log(res)
+            dispatch({type: REGISTER_SUCCESS})
+            history.push('/login')
+        })
+        .catch(err => {
+            console.log(err)
+            dispatch({type: REGISTER_FAILURE})        
+        })
 }

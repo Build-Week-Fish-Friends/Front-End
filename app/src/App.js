@@ -1,12 +1,24 @@
 import React from 'react';
+
+import {Route, Switch} from 'react-router-dom'
+
 import LoginForm from './components/login';
 import SignUp from './components/signup';
+import Dashboard from './components/Dashboard'
+import PrivateRoute from './components/PrivateRoute'
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <h2>Fish Friends Build Week</h2>
+      <Switch>
+          <Route path="/register" component={SignUp} />
+          <Route path="/login" component={LoginForm} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
+      </Switch>
+
         <LoginForm />
         <SignUp />
       {/* Hello everyone! this week we will be working on fish friends!  */}
