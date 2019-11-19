@@ -3,3 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { Button } from 'reactstrap';
+
+const SignUp = (props) => {
+  
+}
+export default SignUp;
