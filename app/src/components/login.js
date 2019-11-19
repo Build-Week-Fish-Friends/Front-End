@@ -9,7 +9,7 @@ const Login = (props) => {
     
     const [loginInfo, setLoginInfo] = useState({
         // these will be set to blank once AUth is working correctly
-        username: 'User20',
+        username: 'TestUser',
         password: 'pword',
     })
 
@@ -22,7 +22,7 @@ const Login = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-                props.history.push('/dashboard')
+        
     }
 
     return (

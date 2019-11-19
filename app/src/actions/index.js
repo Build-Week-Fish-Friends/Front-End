@@ -12,7 +12,7 @@ export const login = (credentials, history) => (dispatch) => {
         .then(res => {
             console.log(res)
             localStorage.setItem("token", res.data.token)
-            // localStorage.setItem("id", res.data.id)
+            localStorage.setItem("id", res.data.id)
             dispatch({type: LOGIN_SUCCESS})
             history.push('/dashboard')
         })
@@ -35,5 +35,23 @@ export const register = ( registerUser, history) => (dispatch) => {
         .catch(err => {
             console.log(err)
             dispatch({type: REGISTER_FAILURE})        
+        })
+}
+
+export const NEW_LOG_START = "NEW_LOG"
+export const NEW_LOG_SUCCESS = "NEW_LOG_SUCCESS"
+export const NEW_LOG_FAILURE = "NEW_LOG_FAIL"
+
+export const addEvent = (logData, history) => (dispatch) => {
+    dispatch({type: NEW_LOG_START})
+    axiosWithAuth()
+        .post("https://fish-friends-resources.herokuapp.com/api/logs", logData)
+        .then(res => {
+            dispatch({type: NEW_LOG_SUCCESS})
+            history.push('/dashboard')
+        })
+        .catch(err => {
+            console.log(err)
+            dispatch({NEW_LOG_FAILURE})  
         })
 }
