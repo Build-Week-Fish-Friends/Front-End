@@ -16,6 +16,7 @@ const LoginForm = ({props, values, errors, touched, status}) => {
 
     return (
         <div className = "login">
+            {/* <h2>Login</h2> */}
             <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>Login</Button>
             <Collapse isOpen={isOpen}>
             <Card>
@@ -37,7 +38,7 @@ const LoginForm = ({props, values, errors, touched, status}) => {
             {users.map(user => (
                 <div key={user.id}>
                     <p>Username: {user.username}</p>
-                    <p>Password: {user.passoword}</p>
+                    <p>Password: {user.password}</p>
                 </div>
             ))}
         </div>

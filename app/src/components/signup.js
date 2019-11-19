@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { withFormik, Form, Field } from "formik";
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
-import * as Yup from 'yup';
 import axios from 'axios';
+import * as Yup from 'yup';
 
 
 
@@ -17,7 +17,8 @@ const SignUp = ({props, values, errors, touched, status}) => {
 
     return (
         <div className = "signUp">
-            <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem'}}>Sign Up</Button>
+            <h2>Sign Up</h2>
+            <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem'}}>Click Here</Button>
             <Collapse isOpen={isOpen}>
             <Card>
                 <CardBody>
@@ -29,11 +30,11 @@ const SignUp = ({props, values, errors, touched, status}) => {
                     <label>Email: 
                     <Field type="email" name="email" placeholder="email"/>
                     </label>
-                    {touched.email && errors.email && <p classsName="errors">{errors.email}</p>}
+                    {touched.email && errors.email && <p classsName="errors"></p>}
                     <label>Password: 
                     <Field type="password" name="password" placeholder="password"/>
                     </label>
-                    {touched.password && errors.password && <p className="errors">{errors.password}</p>}
+                    {touched.name && errors.name && <p className="errors">{errors.name}</p>}
                     <button type="submit">Submit</button>
                 </Form>
                 </CardBody>
@@ -61,7 +62,6 @@ const FormikSignUp = withFormik({
 
     validationSchema: Yup.object().shape({
         name: Yup.string().required(),
-        email: Yup.string().email('Please enter a valid email').required('Please enter an email'),
         password: Yup.string().min(8).max(16).required()
     }),
 
