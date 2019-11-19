@@ -9,7 +9,7 @@ const Login = (props) => {
     
     const [loginInfo, setLoginInfo] = useState({
         // these will be set to blank once AUth is working correctly
-        username: 'User',
+        username: 'User20',
         password: 'pword',
     })
 

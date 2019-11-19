@@ -9,7 +9,7 @@ const Register = (props) => {
     
     const [registerUser, setRegisterUser] = useState({
         // these will be set to blank once AUth is working correctly
-        username: 'User',
+        username: 'User10',
         password: 'pword',
     })
 
