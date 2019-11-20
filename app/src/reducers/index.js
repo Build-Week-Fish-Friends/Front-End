@@ -14,6 +14,11 @@ import {
     SINGLE_LOG_START,
     SINGLE_LOG_SUCCESS,
     SINGLE_LOG_FAILURE,
+    EDIT_START,
+    EDIT_SUCCESS,
+    EDIT_FAILURE,
+    DELETE_START,
+    DELETE_SUCCESS
 } from '../actions'
 
 const initialState = {
@@ -24,11 +29,8 @@ const initialState = {
    isCreatingLog: false,
    hasCreatedLog: false,
    logList: [
-     { location: 'Caspian Sea',
-   startTime: '5am',
-   species: 'Trout',
-   fishCount: '1',
-   bait: 'Wooly Bugger'}],
+        
+    ],
    isUpdating:false,
    isDeleted:false,
    locations: [],
@@ -78,13 +80,7 @@ export const reducer = (state = initialState, action ) => {
                   hasCreatedEvent: false,
                   isCreatingEvent: true
              }
-        case NEW_LOG_START: 
-             return{
-                    ...state,
-                    isFetching: true,
-                    hasCreatedEvent: false,
-                    isCreatingEvent: false
-             }
+
         case NEW_LOG_SUCCESS:
              return{
                   ...state,
@@ -111,6 +107,45 @@ export const reducer = (state = initialState, action ) => {
               return{
                     ...state,
               }
+          case SINGLE_LOG_START:
+               return {
+                    ...state,
+               }
+          case SINGLE_LOG_SUCCESS:
+               return {
+                    ...state,
+                    locations: action.payload
+               }
+          case SINGLE_LOG_FAILURE:
+               return {
+                    ...state,
+                    
+               }
+          case EDIT_START:
+               return {
+                    ...state,
+                    isUpdating: false,
+               }
+          case EDIT_SUCCESS: 
+               return{
+                    ...state,
+                    isUpdating: true,
+               }
+          case EDIT_FAILURE:
+               return {
+                    ...state,
+                    isUpdating: false,
+               }
+          case DELETE_START:
+               return {
+                    ...state,
+                    isDeleted: false
+               }
+          case DELETE_SUCCESS:
+               return {
+                    ...state,
+                    isDeleted: true
+               }
 
     default:
         return state;

@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard'
 import PrivateRoute from './components/PrivateRoute'
 import Landing from './components/Landing'
 import LogForm from './components/LogForm'
+import EditLogForm from './components/EditLogForm'
 import LogList from './components/LogList'
 import './App.css';
 
@@ -24,8 +25,10 @@ function App() {
 
           <PrivateRoute path="/Dashboard" component={Dashboard} />
           <PrivateRoute path="/add" component={LogForm} />
-        
+          <PrivateRoute exact path='/edit-log/:id' component={EditLogForm} />
+
           <PrivateRoute exact path="/logs/:id" component={LogList}/>
+          <PrivateRoute exact path='' />
       </Switch>
 
       <footer>
