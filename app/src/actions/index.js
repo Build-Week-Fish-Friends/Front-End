@@ -1,6 +1,7 @@
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 import axios from 'axios'
 
+// login action creator
 export const REQUEST_START = "REQUEST_START"
 export const REQUEST_FAILURE = "REQUEST_FAILURE"
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS"
@@ -19,6 +20,7 @@ export const login = (credentials, history) => (dispatch) => {
         .catch( err => console.log(err))
 }
 
+// register action creator
 export const REGISTER_START = 'REGISTER_START'
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS' 
 export const REGISTER_FAILURE = 'REGISTER_FAILURE'
@@ -38,6 +40,7 @@ export const register = ( registerUser, history) => (dispatch) => {
         })
 }
 
+// new log action creator
 export const NEW_LOG_START = "NEW_LOG"
 export const NEW_LOG_SUCCESS = "NEW_LOG_SUCCESS"
 export const NEW_LOG_FAILURE = "NEW_LOG_FAIL"
@@ -54,4 +57,15 @@ export const addEvent = (logData, history) => (dispatch) => {
             console.log(err)
             dispatch({NEW_LOG_FAILURE})  
         })
+}
+
+// fetch logs action creator
+export const SINGLE_LOG_START = "SINGLE_LOG_START"
+export const SINGLE_LOG_SUCCESS = "SINGLE_LOG_SUCCESS"
+export const SINGLE_LOG_FAILURE = "SINGLE_LOG_FAILURE"
+
+export const fetchData = () => (dispatch) => {
+    let id = parseItn(localStorage.getItem('id'))
+
+    dispatch({SINGLE_LOG_START})
 }
