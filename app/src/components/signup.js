@@ -9,8 +9,8 @@ const Register = (props) => {
     
     const [registerUser, setRegisterUser] = useState({
         // these will be set to blank once AUth is working correctly
-        username: 'TestUser',
-        password: 'pword',
+        username: '',
+        password: '',
     })
 
     const handleChange = event => {
@@ -32,7 +32,7 @@ const Register = (props) => {
                     Username
                     <br />
                     <input
-                        name="name"
+                        name="username"
                         type="text"
                         value={registerUser.username}
                         placeholder="epicAngler33"

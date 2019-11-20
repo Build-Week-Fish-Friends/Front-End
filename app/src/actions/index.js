@@ -80,22 +80,57 @@ export const fetchData = () => (dispatch) => {
      })
 }
 
+//
+export const EDIT_START = "wow"
+export const EDIT_FAILURE = "wow"
+export const EDIT_SUCCESS = "wow"
 
-// individual logs 
-// export const SINGLE_LOG_START = "beep"
-// export const SINGLE_LOG_SUCCESS = "beep"
-// export const SINGLE_LOG_FAILURE= "beep"
+export const editLog = (updateLog , id, history) => (dispatch) => {
+    dispatch({type: EDIT_START})
+    axiosWithAuth()
+        .put(`https://fish-friends-resources.herokuapp.com/api/logs/${id}`, updateLog)
+        .then(res => {
+            console.log(res)
+            dispatch({type: EDIT_SUCCESS})
+            history.push('/dashboard')
+        })
+        .catch(err => {
+            console.log(err)
+            dispatch({type: EDIT_FAILURE})
+        })
+}
 
-// export const fetchSingleEvent = (id) => (dispatch) => {
-//     dispatch({type: SINGLE_LOG_START})
-//     axiosWithAuth()
-//     .get(``)
-//     .then(res => {
-//          console.log(res.data)
-//          dispatch({ type: SINGLE_LOG_SUCCESS, payload: res.data })
-//     })
-//     .catch(error => {
-//          console.log(error)
-//          dispatch({ type: SINGLE_LOG_FAILURE })
-//     })
-// }
+export const DELETE_START = "del"
+export const DELETE_SUCCESS = 'delete_complete'
+
+export const deleteEvent = (id, history) => (dispatch) => {
+    axiosWithAuth()
+        .delete(`https://bw-corporate-event-planner.herokuapp.com/api/events/${id}`)
+        .then(res => {
+            console.log(res)
+            dispatch({ type: DELETE_SUCCESS})
+            history.push('/dashboard')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+
+// logs by area
+export const SINGLE_LOG_START = "beep"
+export const SINGLE_LOG_SUCCESS = "beep"
+export const SINGLE_LOG_FAILURE= "beep"
+
+export const fetchSingleEvent = (id) => (dispatch) => {
+    dispatch({type: SINGLE_LOG_START})
+    axiosWithAuth()
+    .get(`https://fish-friends-resources.herokuapp.com/api/logs/area/${id}`)
+    .then(res => {
+         console.log(res.data)
+         dispatch({ type: SINGLE_LOG_SUCCESS, payload: res.data })
+    })
+    .catch(error => {
+         console.log(error)
+         dispatch({ type: SINGLE_LOG_FAILURE })
+    })
+}
