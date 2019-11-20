@@ -1,18 +1,14 @@
 import React from 'react'
 import AddLogForm from './LogForm'
-
+import NavBar from './NavBar'
 const Dashboard = () => {
 
     return (
 
     <div>
-        <nav>
-            <img src="#" alt="logo"/>
-            <a href="/">Logout</a>
-        </nav>
-
+            <NavBar />
         <div>
-            <AddLogForm />
+           
         </div>
     </div>
 

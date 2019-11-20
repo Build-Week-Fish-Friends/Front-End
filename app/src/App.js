@@ -3,7 +3,7 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom'
 
 import Login from './components/Login'
-import Signup from './components/signup'
+import Signup from './components/Signup'
 import Dashboard from './components/Dashboard'
 import PrivateRoute from './components/PrivateRoute'
 import Landing from './components/Landing'
@@ -13,7 +13,6 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h2>Fish Friends Build Week</h2>
       <Switch>
 
           
