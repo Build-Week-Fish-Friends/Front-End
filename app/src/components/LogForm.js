@@ -14,25 +14,31 @@ const AddLogForm = (props) => {
         location: '',
         startTime: '',
         totalTime: '',
+        species: '',
+        fishCount: '',
+        bait: ''
     })
 
     return (
-        <div>
+        <div className="log-form">
             <h2>Add a Catch</h2>
-            <form>
-                <label>Bait: <select value="" onChange="">
-                        <option value='select'>Select</option>
+            <form className="log">
+                <label>Bait: </label>
+                    <select className="dropdown" value="" onChange="">
+                        <option placeholder='select'>Select</option>
                         <option value='flies'>Flies</option>
                         <option value='naturalBait'>Natural Bait</option>
                         <option value='lures'>Lures</option>
                         <option value='other'>Other</option>
                     </select>
-                </label>
-                <label>Species:<input text='text' name='species' placeholder='Species'/></label>
-                <label>Location:  <input type="text" class='location' value='Location'/></label>
-                <label>Time of Day: <input/></label>
-                
-                <label># of Fish: <input/></label>
+                <label>Species: </label>
+                    <input text='text' name='species' placeholder='Species'/>
+                <label>Location:  </label>
+                    <input type="text" class='location' placeholder='Location'/>
+                <label>Time of Day: </label>
+                <input text='text' name='time' placeholder='6:00 am'/>
+                <label># of Fish: </label>
+                <input text='text' name='fishCount' placeholder='20'/>
                 <button type='submit'>Next</button>
             </form>
         </div>

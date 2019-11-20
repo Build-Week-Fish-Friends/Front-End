@@ -6,12 +6,13 @@ const Dashboard = () => {
     return (
     <div>
         <nav>
-            <h4> PrivateRoute - login success</h4>
+            <img src="#" alt="logo"/>
             <a href="/">Logout</a>
         </nav>
 
-    
+        <div>
             <AddLogForm />
+        </div>
     </div>
     )
 }
