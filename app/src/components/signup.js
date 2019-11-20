@@ -26,18 +26,18 @@ const Register = (props) => {
     }
     return (
         <>
-             <h3>Signup</h3>
-           <form onSubmit={handleSubmit}>
+            <h3>Signup</h3>
+            <form onSubmit={handleSubmit}>
                 <label>
                     Username
                     <br />
                     <input
-                         name="name"
+                        name="name"
                         type="text"
                         value={registerUser.username}
                         placeholder="epicAngler33"
                         onChange={handleChange}
-                     />
+                    />
                 </label>
                 <br />
                 <label>
@@ -49,7 +49,7 @@ const Register = (props) => {
                         value={registerUser.password}
                         placeholder="password"
                         onChange={handleChange}
-                     />
+                    />
                 </label>
                 <br />
                 <button type="submit" onClick={() => props.register(registerUser, props.history)}>Signup</button>

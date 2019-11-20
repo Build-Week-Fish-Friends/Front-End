@@ -2,8 +2,8 @@ import React from 'react';
 
 import {Route, Switch} from 'react-router-dom'
 
-import Login from './components/Login';
-import SignUp from './components/Signup';
+import Login from './components/Login'
+import Signup from './components/signup'
 import Dashboard from './components/Dashboard'
 import PrivateRoute from './components/PrivateRoute'
 import Landing from './components/Landing'
@@ -18,8 +18,8 @@ function App() {
 
           
           <Route exact path="/" component={Landing}/>
-          <Route path="/register" component={SignUp} />
-          <Route path="/login" component={Login} />
+          <Route path="/Register" component={Signup} />
+          <Route path="/Login" component={Login} />
 
 
           <PrivateRoute path="/dashboard" component={Dashboard} />
