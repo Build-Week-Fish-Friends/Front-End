@@ -9,8 +9,8 @@ const Login = (props) => {
     
     const [loginInfo, setLoginInfo] = useState({
         // these will be set to blank once AUth is working correctly
-        username: 'TestUser',
-        password: 'pword',
+        username: '',
+        password: '',
     })
 
     const handleChange = e => {

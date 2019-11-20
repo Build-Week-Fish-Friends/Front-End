@@ -2,26 +2,26 @@ import React, {useState} from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import NavBar from './NavBar'
-import {addEvent} from '../actions'
+import {editLog} from '../actions'
 import '../App.css'
 
 
-const AddLogForm = (props) => {
+const EditLogForm = (props) => {
     let id = parseInt(localStorage.getItem('id'))
     console.log(id)
 
-    const [createLog, SetCreateLog] = useState({
+    const [editLog, SetEditLog] = useState({
         species: '',
         fishCount: '',
         bait: ''
     })
-
+    
     const handleSubmit = e => {
         e.preventDefault()
     }
     const handleChange = e => {
-        SetCreateLog({
-            ...createLog,
+        SetEditLog({
+            ...editLog,
             [e.target.name]: e.target.value
         })
     }
@@ -30,25 +30,25 @@ const AddLogForm = (props) => {
 
         <NavBar />
         <div className="log-form">
-            <h2>Create a Fishing Log</h2>
+            <h2>Update a Fishing Log</h2>
             <form onSubmit={handleSubmit} className="log">
                 <label>Bait: </label>
                     <input 
                         type="text" 
                         name="bait"
                         placeholder="Dragonfly Nymphy"    
-                        value={createLog.bait}
+                        value={editLog.bait}
                         onChange={handleChange}
                     />
                 <label>Species: </label>
-                    <input onChange={handleChange} text='text' name='species' placeholder='Rainbow Trout, Bass, ect' value={createLog.species}/>
+                    <input onChange={handleChange} text='text' name='species' placeholder='Rainbow Trout, Bass, ect' value={editLog.species}/>
                 {/* <label>Location:  </label>
-                    <input onChange={handleChange} type="text" name='location' placeholder='Location'  value={createLog.location}/> 
+                    <input onChange={handleChange} type="text" name='location' placeholder='Location'  value={editLog.location}/> 
                     area_id (fake id) -- drop down
                     */}
                 <label># of Fish: </label>
-                <input onChange={handleChange} text='number' name='fishCount' placeholder='4'  value={createLog.fishCount}/>
-                <button type='submit' onClick={() => props.addEvent(createLog, props.history)}>Add Log</button>
+                <input onChange={handleChange} text='number' name='fishCount' placeholder='4'  value={editLog.fishCount}/>
+                <button type='submit' onClick={() => props.editLog(editLog,  props.match.params.id, props.history)}>Add Log</button>
             </form>
         </div>
 
@@ -58,8 +58,8 @@ const AddLogForm = (props) => {
 
 const mapStateToProps = state => {
     return{
-
+        logList: state.logList
     }
 }
 
-export default connect(mapStateToProps, {addEvent})(withRouter(AddLogForm))
+export default connect(mapStateToProps, {editLog})(withRouter(EditLogForm))

@@ -11,19 +11,19 @@ function LogList(props){
         props.fetchData()
     },[])
     return (
-        <div className='eventDiv'> 
-        <div className="eventRowFake">
-             <div className="eventCol">
+        <div className='LogDiv'> 
+        <div className="LogRowFake">
+             <div className="LogCol">
                   <h4>Log Location:</h4>
              </div>
-             <div className="eventCol">
-                  <h4>Event Description</h4>
+             <div className="LogCol">
+                  <h4>Log </h4>
              </div>
-             <div className="eventCol">
-                  <h4>Event Budget</h4>
+             <div className="LogCol">
+                  <h4>Log Budget</h4>
              </div>
-             <div className="eventCol">
-                  <h4>Date of Event</h4>
+             <div className="LogCol">
+                  <h4>Date of Log</h4>
              </div>
          </div>
             {/* {props.logList.map(item => {
