@@ -64,8 +64,8 @@ export const SINGLE_LOG_START = "SINGLE_LOG_START"
 export const SINGLE_LOG_SUCCESS = "SINGLE_LOG_SUCCESS"
 export const SINGLE_LOG_FAILURE = "SINGLE_LOG_FAILURE"
 
-export const fetchData = () => (dispatch) => {
-    let id = parseItn(localStorage.getItem('id'))
+// export const fetchData = () => (dispatch) => {
+//     let id = parseItn(localStorage.getItem('id'))
 
-    dispatch({SINGLE_LOG_START})
-}
+//     dispatch({SINGLE_LOG_START})
+// }
