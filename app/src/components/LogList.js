@@ -12,7 +12,7 @@ function LogList(props){
     },[])
     return (
         <div className='eventDiv'> 
-        {/* <div className="eventRowFake">
+        <div className="eventRowFake">
              <div className="eventCol">
                   <h4>Log Location:</h4>
              </div>
@@ -26,7 +26,7 @@ function LogList(props){
                   <h4>Date of Event</h4>
              </div>
          </div>
-            {props.logList.map(item => {
+            {/* {props.logList.map(item => {
                 return (
                 <NavLink to={`/logs/${item.id}`}>
                     <LogCard logList={item} key={item.id}/>
