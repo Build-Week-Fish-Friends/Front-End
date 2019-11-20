@@ -4,6 +4,7 @@ import AddLogForm from './LogForm'
 const Dashboard = () => {
 
     return (
+
     <div>
         <nav>
             <img src="#" alt="logo"/>
@@ -14,6 +15,7 @@ const Dashboard = () => {
             <AddLogForm />
         </div>
     </div>
+
     )
 }
 
