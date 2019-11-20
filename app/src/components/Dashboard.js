@@ -1,6 +1,7 @@
 import React from 'react'
-import AddLogForm from './LogForm'
+
 import NavBar from './NavBar'
+import LogList from './LogList'
 const Dashboard = () => {
 
     return (
@@ -8,7 +9,7 @@ const Dashboard = () => {
     <div>
             <NavBar />
         <div>
-           
+           <LogList />
         </div>
     </div>
 
