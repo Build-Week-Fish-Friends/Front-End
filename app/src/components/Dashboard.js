@@ -1,29 +1,18 @@
 import React from 'react'
+import AddLogForm from './LogForm'
 
 const Dashboard = () => {
 
     return (
-        <>
-        <h4> PrivateRoute - login success</h4>
+    <div>
+        <nav>
+            <h4> PrivateRoute - login success</h4>
+            <a href="/">Logout</a>
+        </nav>
 
-        <a href="/">Logout</a>
-
-
-        {/* here we will be making a place to create new logs - and display them. Try to avoid using formik for the first verison :) */}
-
-        {/* 
-        
-            1) navbar 
-            
-            2) a place for 'logForm'
-
-            3) render logs by location
-
-            4) render log by the user
-        
-        */}
-
-        </>
+    
+            <AddLogForm />
+    </div>
     )
 }
 
