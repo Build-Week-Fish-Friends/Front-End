@@ -8,7 +8,7 @@ import Dashboard from './components/Dashboard'
 import PrivateRoute from './components/PrivateRoute'
 import Landing from './components/Landing'
 import LogForm from './components/LogForm'
-import Navbar from './components/NavBar'
+import LogList from './components/LogList'
 import './App.css';
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <PrivateRoute path="/add" component={LogForm} />
         
+          <PrivateRoute exact path="/logs/:id" component={LogList}/>
       </Switch>
 
       <footer>

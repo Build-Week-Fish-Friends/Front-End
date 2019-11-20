@@ -82,20 +82,20 @@ export const fetchData = () => (dispatch) => {
 
 
 // individual logs 
-export const SINGLE_LOG_START = "beep"
-export const SINGLE_LOG_SUCCESS = "beep"
-export const SINGLE_LOG_FAILURE= "beep"
+// export const SINGLE_LOG_START = "beep"
+// export const SINGLE_LOG_SUCCESS = "beep"
+// export const SINGLE_LOG_FAILURE= "beep"
 
-export const fetchSingleEvent = (id) => (dispatch) => {
-    dispatch({type: SINGLE_LOG_START})
-    axiosWithAuth()
-    .get(``)
-    .then(res => {
-         console.log(res.data)
-         dispatch({ type: SINGLE_LOG_SUCCESS, payload: res.data })
-    })
-    .catch(error => {
-         console.log(error)
-         dispatch({ type: SINGLE_LOG_FAILURE })
-    })
-}
+// export const fetchSingleEvent = (id) => (dispatch) => {
+//     dispatch({type: SINGLE_LOG_START})
+//     axiosWithAuth()
+//     .get(``)
+//     .then(res => {
+//          console.log(res.data)
+//          dispatch({ type: SINGLE_LOG_SUCCESS, payload: res.data })
+//     })
+//     .catch(error => {
+//          console.log(error)
+//          dispatch({ type: SINGLE_LOG_FAILURE })
+//     })
+// }

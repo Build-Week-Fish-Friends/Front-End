@@ -23,7 +23,12 @@ const initialState = {
    isRegistering: false,
    isCreatingLog: false,
    hasCreatedLog: false,
-   logList: [],
+   logList: [
+     { location: 'Caspian Sea',
+   startTime: '5am',
+   species: 'Trout',
+   fishCount: '1',
+   bait: 'Wooly Bugger'}],
    isUpdating:false,
    isDeleted:false,
    locations: [],
