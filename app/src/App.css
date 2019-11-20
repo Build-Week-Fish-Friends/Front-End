@@ -5,12 +5,18 @@
 .log-form {
   display: flex;
   flex-direction: column;
-  margin-top: 10%;
+  margin-top: 20px;
 }
 
 .log-form h2 {
   background-color: #4682B4;
   margin: 0 300px;
+}
+.log-form img {
+  margin-left: 42%;
+  width: 300px;
+  height: 70vh;
+
 }
 
 .log {
@@ -24,24 +30,30 @@
 }
 
 .log button {
-  border-radius: 12px;
+  border-radius: 4px;
   border: none;
   color: white;
   font-size: 1.2rem;
   text-align: center;
   margin-top: 20px;
-  width: 150px;
-  background-color: #6495ED;
+  padding: 5px;
+  width: 350px;
+  background-color: #0a6ea6;
 }
 
 .dropdown {
-  border-radius: 4px;
-  width: 200px;
-  text-align: center;
+  width: 500px;
+  margin: 0 0 15px 0;
+  padding: 10px;
 }
 
+.dropdown:first-child {
+  color: #858484;
+}
 .log-form input {
-  width: 200px;
+  margin: 15px 0;
+  padding: 10px;
+  width: 500px;
 }
 
 .log-form label {
@@ -54,51 +66,55 @@
   text-align: center;
 }
 
-/* navbar css */
+/* Navigation Styles Here */
 
-.navbar{
-  width: 65%;
+.navBar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: 1.5% auto;
-}
-
-.largeNavItem{
-  width: 30%;
-  color: #343740;
-}
-
-.largeNavItem h2{
-  font-size:3rem;
-  font-weight: bold;
-}
-
-.smallNavItem{
-  width: 65%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.NavItem{
-  margin: 0px 10px;
-}
-
-.NavItem button{
-  padding: 9px 25px;
-  background: #7795f8;
-  border: 1px solid #7795f8;
-  font-weight: bold;
-  font-size:14px;
-  border-radius: 15px;
-  width:100%;
-  color: #ecedf2;
-}
-
-.NavItem button:hover{
+  background-color: #0a6ea6;
   color: white;
-  background: #91a9f7;
-  border: solid 1px #91a9f7;
-  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.navBar h1 {
+  margin-left: 1%;
+}
+
+.navBar nav {
+  display: flex;
+  margin-left: 65%;
+}
+.navBar a {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 20px;
+  color: white;
+  font-size: 1.3rem;
 
 }
+
+/* Footer Styles Here */
+
+footer {
+  text-align: left;
+  background-color: #f0f1f3;
+}
+
+.navBottom {
+  padding: 30px;
+}
+
+.navBottom h2 {
+  color: #0a6ea6;
+}
+
+.navBottom a {
+  margin-right: 20px;
+  color: black;
+  width: 100px;
+}
+
+footer span {
+  text-align: center;
+  margin-left: 50%;
+  color: #0a6ea6;
+} 

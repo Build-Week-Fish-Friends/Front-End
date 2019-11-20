@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard'
 import PrivateRoute from './components/PrivateRoute'
 import Landing from './components/Landing'
 import LogForm from './components/LogForm'
+import Navbar from './components/NavBar'
 import './App.css';
 
 function App() {
@@ -26,22 +27,24 @@ function App() {
         
       </Switch>
 
-      {/* feel free to move these around however you wish(im just going for functionality) */}
-      {/* Hello everyone! this week we will be working on fish friends!  */}
+      <footer>
+        <nav className="navBottom">
+          <nav className="nav">
+              <a href="/dashboard">Dashboard</a>
+              {/* <a href="#">Map</a> */}
+              <a href="/add">New Log </a>
+              <a href="/">Logout</a>
+        </nav>
+              </nav>
+            <span>
+                {/* social media icons here */}
+                <copyright>2019 FishFriends</copyright>
+            </span>
 
-      {/* here is our product: https://docs.google.com/document/d/1Ozyf3g8RX9Rur8l6KFswSJjNF3E-dJ1fR25kX-Nv_4k/edit#heading=h.on2hvskyc3k9 */}
-      
-      {/* Start with login / signup pages (these will just be forms) and then work on the dashboard
-      
-      The Dashboard will need a place where we can create new logs, view past ones and also need a place where other
-      poeple logs can be seen 
-      
-
-      See the above link for the fields you need
-
-      Reach out to spencer if you need anythings
-      */}
+        </footer>
     </div>
+
+    
   );
 }
 

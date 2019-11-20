@@ -7,21 +7,14 @@ import '../App.css'
 const Navbar = () => {
 
     return (
-        <div className="navbar">
-            <div className="largeNavItem">
-            <h2 className="title-icon">FishFriends</h2>
-            </div>
-            <div className="smallNavItem">
-                <div className="NavItem">
-                    <Link to="/dashboard"><button className="navButton">Dashboard</button></Link>
-                </div>
-                <div className="NavItem">
-                    <Link to='/add'><button className="navButton">New Log</button></Link>
-                </div>
-                <div className="NavItem">
-                    <Link to='/'><button className="navButton">Logout</button></Link>
-                </div>
-            </div>
+        <div className="navBar">
+        <h2>FishFriends</h2>
+        <nav className="nav">
+            <a href="/dashboard">Dashboard</a>
+            {/* <a href="#">Map</a> */}
+            <a href="/add">New Log </a>
+            <a href="/">Logout</a>
+        </nav>
         </div>
     )
     }
