@@ -39,6 +39,3 @@ const mapStateToProps = state => {
     }
 }
 export default connect(mapStateToProps, { deleteEvent})(withRouter(SingleEvent))
-
-
-export default LogCard

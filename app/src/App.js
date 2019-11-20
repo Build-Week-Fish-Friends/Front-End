@@ -25,10 +25,13 @@ function App() {
 
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <PrivateRoute path="/add" component={LogForm} />
-          <PrivateRoute exact path='/edit-log/:id' component={EditLogForm} />
 
+          {/* user Logs */}
+          <PrivateRoute exact path='/edit-log/:id' component={EditLogForm} />
           <PrivateRoute exact path="/logs/:id" component={LogList}/>
-          <PrivateRoute exact path='' />
+
+          {/* local logs */}
+          <PrivateRoute exact path='/logs/area/:id' component={AreaCard} /> 
       </Switch>
 
       <footer>

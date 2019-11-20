@@ -2,14 +2,19 @@ import React from 'react'
 
 import NavBar from './NavBar'
 import LogList from './LogList'
-const Dashboard = () => {
+import AreaCard from './AreaCard'
+const Dashboard = (props) => {
 
     return (
 
     <div>
             <NavBar />
         <div>
+            {/* renders LogList */}
            <LogList />
+        </div>
+        <div>
+            <AreaCard />
         </div>
     </div>
 
