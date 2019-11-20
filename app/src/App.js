@@ -13,9 +13,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h2>Fish Friends Build Week</h2>
+      {/* <h2>Fish Friends Build Week</h2> */}
+      <Dashboard />
       <Switch>
-
+      <LogForm />
           
           <Route exact path="/" component={Landing}/>
           <Route path="/Register" component={Signup} />
@@ -42,6 +43,19 @@ function App() {
 
       Reach out to spencer if you need anythings
       */}
+      <footer>
+            <nav className="navBottom">
+                <h2>FishFriends</h2>
+                <a href="#">Home</a>
+                <a href="#">Map</a>
+                <a href="/LogForm">Add Catch</a>
+            </nav>
+            <span>
+                {/* social media icons here */}
+                <copyright>2019 FishFriends</copyright>
+            </span>
+            
+        </footer>
     </div>
   );
 }
