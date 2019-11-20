@@ -7,7 +7,13 @@ import {
     REGISTER_FAILURE,
     NEW_LOG_START,
     NEW_LOG_SUCCESS,
-    NEW_LOG_FAILURE
+    NEW_LOG_FAILURE,
+    FETCH_START,
+    FETCH_SUCCESS,
+    FETCH_FAILURE,
+    SINGLE_LOG_START,
+    SINGLE_LOG_SUCCESS,
+    SINGLE_LOG_FAILURE,
 } from '../actions'
 
 const initialState = {
@@ -87,6 +93,19 @@ export const reducer = (state = initialState, action ) => {
                   hasCreatedLog: false,
                   isFetching: false,
              }
+         case FETCH_START:
+              return {
+                    ...state,
+              }
+          case FETCH_SUCCESS:
+              return {
+                    ...state,
+                    logList: action.payload
+              }
+          case FETCH_FAILURE:
+              return{
+                    ...state,
+              }
 
     default:
         return state;
