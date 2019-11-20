@@ -10,10 +10,10 @@ const Navbar = () => {
         <div className="navBar">
         <h2>FishFriends</h2>
         <nav className="nav">
-            <a href="/dashboard">Dashboard</a>
+            <Link to="/Dashboard">Dashboard</Link>
             {/* <a href="#">Map</a> */}
-            <a href="/add">New Log </a>
-            <a href="/">Logout</a>
+            <Link to="/add">New Log </Link>
+            <Link to="/">Logout</Link>
         </nav>
         </div>
     )

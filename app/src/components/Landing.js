@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Login from './Login'
-import SignUp from './Signup'
+import signUp from './signup'
 const Landing = () => {
 
     return (
@@ -9,7 +9,7 @@ const Landing = () => {
             <Login />
                 <br />
 
-            <SignUp />
+            <signUp />
         </>
     )
 }

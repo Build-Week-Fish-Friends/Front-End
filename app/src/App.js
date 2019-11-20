@@ -3,7 +3,7 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom'
 
 import Login from './components/Login'
-import Signup from './components/Signup'
+import signup from './components/signup'
 import Dashboard from './components/Dashboard'
 import PrivateRoute from './components/PrivateRoute'
 import Landing from './components/Landing'
@@ -18,11 +18,11 @@ function App() {
       <LogForm />
           
           <Route exact path="/" component={Landing}/>
-          <Route path="/Register" component={Signup} />
+          <Route path="/Register" component={signup} />
           <Route path="/Login" component={Login} />
 
 
-          <PrivateRoute path="/dashboard" component={Dashboard} />
+          <PrivateRoute path="/Dashboard" component={Dashboard} />
           <PrivateRoute path="/add" component={LogForm} />
         
           <PrivateRoute exact path="/logs/:id" component={LogList}/>
