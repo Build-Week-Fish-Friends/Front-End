@@ -2,7 +2,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-
+ 
+import {deleteEvent} from '../actions'
 function LogCard(props){
     let id = props.match.params.id
     console.log(id)
