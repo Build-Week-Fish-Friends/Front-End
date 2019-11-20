@@ -1,4 +1,7 @@
-import React from 'react'
+  
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 function LogCard(props){
     let id = props.match.params.id
@@ -27,5 +30,14 @@ function LogCard(props){
 
     )
 }
+
+
+const mapStateToProps = state => {
+    return {
+    
+    }
+}
+export default connect(mapStateToProps, { deleteEvent})(withRouter(SingleEvent))
+
 
 export default LogCard
