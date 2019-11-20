@@ -39,6 +39,11 @@ const AddLogForm = (props) => {
         </div>
     )
 }
-export default AddLogForm;
 
+const mapStateToProps = state => {
+    return{
 
+    }
+}
+
+export default connect(mapStateToProps, {addEvent})(withRouter(AddLogForm))

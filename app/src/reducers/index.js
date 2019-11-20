@@ -20,6 +20,7 @@ const initialState = {
    logList: [],
    isUpdating:false,
    isDeleted:false,
+   locations: [],
 }
 
 export const reducer = (state = initialState, action ) => {
@@ -69,9 +70,15 @@ export const reducer = (state = initialState, action ) => {
         case NEW_LOG_START: 
              return{
                     ...state,
-                    isFetching: false,
+                    isFetching: true,
                     hasCreatedEvent: false,
                     isCreatingEvent: false
+             }
+        case NEW_LOG_SUCCESS:
+             return{
+                  ...state,
+                  isCreatingLog: false,
+                  hasCreatedLog: true,
              }
         case NEW_LOG_FAILURE:
              return {

@@ -7,9 +7,9 @@ import Signup from './components/signup'
 import Dashboard from './components/Dashboard'
 import PrivateRoute from './components/PrivateRoute'
 import Landing from './components/Landing'
-
-import './App.css';
 import LogForm from './components/LogForm'
+import './App.css';
+
 function App() {
   return (
     <div className="App">
@@ -24,6 +24,8 @@ function App() {
 
 
           <PrivateRoute path="/dashboard" component={Dashboard} />
+          <PrivateRoute path="/add" component={LogForm} />
+        
       </Switch>
 
       {/* feel free to move these around however you wish(im just going for functionality) */}
