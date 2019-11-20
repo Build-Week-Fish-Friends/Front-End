@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Login from './Login'
-import SignUp from './Signup'
+import SignUp from './signup'
 const Landing = () => {
 
     return (
