@@ -14,8 +14,9 @@
   margin-left: 42%;
   width: 300px;
   height: 70vh;
-  
+
 }
+
 .log {
   display: flex;
   flex-direction: column;
@@ -46,7 +47,6 @@
 .dropdown:first-child {
   color: #858484;
 }
-
 .log-form input {
   margin: 15px 0;
   padding: 10px;
@@ -107,6 +107,57 @@ footer {
 
 footer span {
   text-align: center;
-  margin-left: 50%;
+}
+
+/* Navigation Styles Here */
+
+.navBar {
+  display: flex;
+  align-items: center;
+  background-color: #0a6ea6;
+  color: white;
+}
+
+.navBar h1 {
+  margin-left: 1%;
+}
+
+.navBar nav {
+  display: flex;
+  margin-left: 65%;
+}
+.navBar a {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 20px;
+  color: white;
+  font-size: 1.3rem;
+
+}
+
+/* Footer Styles Here */
+
+footer {
+  text-align: left;
+  background-color: #f0f1f3;
+}
+
+.navBottom {
+  padding: 30px;
+}
+
+.navBottom h2 {
   color: #0a6ea6;
 }
+
+.navBottom a {
+  margin-right: 20px;
+  color: black;
+  width: 100px;
+}
+
+footer span {
+  text-align: center;
+  margin-left: 50%;
+  color: #0a6ea6;
+} 

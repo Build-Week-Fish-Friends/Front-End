@@ -50,22 +50,52 @@ export const addEvent = (logData, history) => (dispatch) => {
     axiosWithAuth()
         .post("https://fish-friends-resources.herokuapp.com/api/logs", logData)
         .then(res => {
+            console.log(res)
             dispatch({type: NEW_LOG_SUCCESS})
             history.push('/dashboard')
         })
         .catch(err => {
             console.log(err)
-            dispatch({NEW_LOG_FAILURE})  
+            dispatch({type: NEW_LOG_FAILURE})  
         })
 }
 
 // fetch logs action creator
-export const SINGLE_LOG_START = "SINGLE_LOG_START"
-export const SINGLE_LOG_SUCCESS = "SINGLE_LOG_SUCCESS"
-export const SINGLE_LOG_FAILURE = "SINGLE_LOG_FAILURE"
+export const FETCH_START = "FETCH_START"
+export const FETCH_SUCCESS = "FETCH_SUCCESS"
+export const FETCH_FAILURE = "FETCH_FAILURE"
 
-// export const fetchData = () => (dispatch) => {
-//     let id = parseItn(localStorage.getItem('id'))
+export const fetchData = () => (dispatch) => {
+     dispatch({type: FETCH_START})
+     let id = parseInt(localStorage.getItem('id'))
+     axiosWithAuth()
+     .get(`https://fish-friends-resources.herokuapp.com/api/logs/${id}`)
+     .then(res => {
+          console.log(res)
+          dispatch({type: FETCH_SUCCESS, payload: res.data})
+     })
+     .catch(error => {
+          console.log(error)
+          dispatch({ type: FETCH_FAILURE })
+     })
+}
 
-//     dispatch({SINGLE_LOG_START})
+
+// individual logs 
+// export const SINGLE_LOG_START = "beep"
+// export const SINGLE_LOG_SUCCESS = "beep"
+// export const SINGLE_LOG_FAILURE= "beep"
+
+// export const fetchSingleEvent = (id) => (dispatch) => {
+//     dispatch({type: SINGLE_LOG_START})
+//     axiosWithAuth()
+//     .get(``)
+//     .then(res => {
+//          console.log(res.data)
+//          dispatch({ type: SINGLE_LOG_SUCCESS, payload: res.data })
+//     })
+//     .catch(error => {
+//          console.log(error)
+//          dispatch({ type: SINGLE_LOG_FAILURE })
+//     })
 // }
