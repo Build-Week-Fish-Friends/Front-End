@@ -44,7 +44,7 @@ const AddLogForm = (props) => {
                     <input onChange={handleChange} text='text' name='species' placeholder='Rainbow Trout, Bass, ect' value={createLog.species}/>
                 <label># of Fish: </label>
                 <input onChange={handleChange} text='number' name='fishCount' placeholder='4'  value={createLog.fishCount}/>
-                <button type='submit' onClick={() => props.addEvent(createLog, props.history)}>Add Log</button>
+                <button type='submit' onClick={() => props.addEvent(createLog, props.history.push)}>Add Log</button>
             </form>
         </div>
 

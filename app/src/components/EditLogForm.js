@@ -6,11 +6,11 @@ import {editLog} from '../actions'
 import '../App.css'
 
 
-const EditLogForm = (props) => {
+const ChangeLogForm = (props) => {
     let id = parseInt(localStorage.getItem('id'))
     console.log(id)
 
-    const [editLog, SetEditLog] = useState({
+    const [changeLog, SetchangeLog] = useState({
         species: '',
         fishCount: '',
         bait: ''
@@ -20,8 +20,8 @@ const EditLogForm = (props) => {
         e.preventDefault()
     }
     const handleChange = e => {
-        SetEditLog({
-            ...editLog,
+        SetchangeLog({
+            ...changeLog,
             [e.target.name]: e.target.value
         })
     }
@@ -37,18 +37,18 @@ const EditLogForm = (props) => {
                         type="text" 
                         name="bait"
                         placeholder="Dragonfly Nymphy"    
-                        value={editLog.bait}
+                        value={changeLog.bait}
                         onChange={handleChange}
                     />
                 <label>Species: </label>
-                    <input onChange={handleChange} text='text' name='species' placeholder='Rainbow Trout, Bass, ect' value={editLog.species}/>
+                    <input onChange={handleChange} text='text' name='species' placeholder='Rainbow Trout, Bass, ect' value={changeLog.species}/>
                 {/* <label>Location:  </label>
-                    <input onChange={handleChange} type="text" name='location' placeholder='Location'  value={editLog.location}/> 
+                    <input onChange={handleChange} type="text" name='location' placeholder='Location'  value={changeLog.location}/> 
                     area_id (fake id) -- drop down
                     */}
                 <label># of Fish: </label>
-                <input onChange={handleChange} text='number' name='fishCount' placeholder='4'  value={editLog.fishCount}/>
-                <button type='submit' onClick={() => props.editLog(editLog,  props.match.params.id, props.history)}>Update Log</button>
+                <input onChange={handleChange} text='number' name='fishCount' placeholder='4'  value={changeLog.fishCount}/>
+                <button type='submit' onClick={() => props.changeLog(changeLog,  props.match.params.id, props.history)}>Update Log</button>
             </form>
         </div>
 
@@ -62,4 +62,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {editLog})(withRouter(EditLogForm))
+export default connect(mapStateToProps, {editLog})(withRouter(ChangeLogForm))

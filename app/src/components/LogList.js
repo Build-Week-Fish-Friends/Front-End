@@ -7,6 +7,7 @@ import LogCard from './LogCard'
 import '../App.css'
 
 function LogList(props){
+
     useEffect(() => {
         props.fetchData()
     },[])
