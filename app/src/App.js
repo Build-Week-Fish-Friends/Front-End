@@ -10,6 +10,7 @@ import Landing from './components/Landing'
 import LogForm from './components/LogForm'
 import EditLogForm from './components/EditLogForm'
 import LogList from './components/LogList'
+import AreaCard from './components/AreaCard'
 import './App.css';
 
 function App() {

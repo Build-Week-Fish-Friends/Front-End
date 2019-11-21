@@ -1,8 +1,8 @@
-import Navbar from "../dashboard/navbar"
+import Navbar from "./NavBar"
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { fetchSingleEvent } from '../../actions/'
+import { fetchSingleEvent } from '../actions/'
 
 import '../App.css'
 
@@ -16,7 +16,7 @@ const AreaCard = props => {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             { props.locations.map( item => {
                 return(
                     <div key={item.area_id} >
@@ -36,4 +36,4 @@ const mapStateToProps = state => {
     }
 }
 
-connect(mapStateToProps, {fetchSingleEvent})(withRouter(AreaCard))
+export default connect(mapStateToProps, {fetchSingleEvent})(withRouter(AreaCard))
