@@ -22,8 +22,8 @@ function LogList(props){
              <div className="LogCol">
                   <h4>#Fish Caught: </h4>
              </div>
-
-            {/* {props.logList.map(item => {
+{/* 
+            {props.logList.map(item => {
                 return (
                 <NavLink to={`/logs/${item.id}`}>
                     <LogCard logList={item} key={item.id}/>

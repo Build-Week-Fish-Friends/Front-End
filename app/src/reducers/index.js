@@ -11,9 +11,9 @@ import {
     FETCH_START,
     FETCH_SUCCESS,
     FETCH_FAILURE,
-    SINGLE_LOG_START,
-    SINGLE_LOG_SUCCESS,
-    SINGLE_LOG_FAILURE,
+    GLOBAL_LOG_START,
+    GLOBAL_LOG_SUCCESS,
+    GLOBAL_LOG_FAILURE,
     EDIT_START,
     EDIT_SUCCESS,
     EDIT_FAILURE,
@@ -28,9 +28,7 @@ const initialState = {
    isRegistering: false,
    isCreatingLog: false,
    hasCreatedLog: false,
-   logList: [
-        
-    ],
+   logList: [],
    isUpdating:false,
    isDeleted:false,
    locations: [],
@@ -107,16 +105,16 @@ export const reducer = (state = initialState, action ) => {
               return{
                     ...state,
               }
-          case SINGLE_LOG_START:
+          case GLOBAL_LOG_START:
                return {
                     ...state,
                }
-          case SINGLE_LOG_SUCCESS:
+          case GLOBAL_LOG_SUCCESS:
                return {
                     ...state,
                     locations: action.payload
                }
-          case SINGLE_LOG_FAILURE:
+          case GLOBAL_LOG_FAILURE:
                return {
                     ...state,
                     

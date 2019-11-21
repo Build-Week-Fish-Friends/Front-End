@@ -19,7 +19,9 @@ const AreaCard = props => {
             {/* <Navbar /> */}
             { props.locations.map( item => {
                 return(
-                    <div key={item.area_id} >
+
+                    // should be area_id ?
+                    <div key={item.id} >
                         <h3>{item.name}</h3>           
                         <h3>{item.duration}</h3>
                         <h3>{item.num_catch}</h3>
