@@ -80,10 +80,10 @@ export const fetchData = () => (dispatch) => {
      })
 }
 
-//
-export const EDIT_START = "wow"
-export const EDIT_FAILURE = "wow"
-export const EDIT_SUCCESS = "wow"
+// edit action for EditLogForm
+export const EDIT_START = "EDIT_START"
+export const EDIT_FAILURE = "EDIT_FAIL"
+export const EDIT_SUCCESS = "EDIT_SUCCESS"
 
 export const editLog = (updateLog , id, history) => (dispatch) => {
     dispatch({type: EDIT_START})
@@ -100,12 +100,13 @@ export const editLog = (updateLog , id, history) => (dispatch) => {
         })
 }
 
-export const DELETE_START = "del"
+// delete action (used in LogCard component)
+export const DELETE_START = "delete_start"
 export const DELETE_SUCCESS = 'delete_complete'
 
 export const deleteEvent = (id, history) => (dispatch) => {
     axiosWithAuth()
-        .delete(`https://bw-corporate-event-planner.herokuapp.com/api/events/${id}`)
+        .delete(`https://fish-friends-resources.herokuapp.com/api/logs/${id}`)
         .then(res => {
             console.log(res)
             dispatch({ type: DELETE_SUCCESS})
@@ -116,21 +117,21 @@ export const deleteEvent = (id, history) => (dispatch) => {
         })
 }
 
-// logs by area
-export const SINGLE_LOG_START = "beep"
-export const SINGLE_LOG_SUCCESS = "beep"
-export const SINGLE_LOG_FAILURE= "beep"
+// logs by area (called in AreaCard)
+export const GLOBAL_LOG_START = "GLOBLE_START"
+export const GLOBAL_LOG_SUCCESS = "GLOBAL_SUCCESS"
+export const GLOBAL_LOG_FAILURE= "GLOBAL_FAIL"
 
-export const fetchSingleEvent = (id) => (dispatch) => {
-    dispatch({type: SINGLE_LOG_START})
+export const fetchLocalLog = (id) => (dispatch) => {
+    dispatch({type: GLOBAL_LOG_START})
     axiosWithAuth()
     .get(`https://fish-friends-resources.herokuapp.com/api/logs/area/${id}`)
     .then(res => {
          console.log(res.data)
-         dispatch({ type: SINGLE_LOG_SUCCESS, payload: res.data })
+         dispatch({ type: GLOBAL_LOG_SUCCESS, payload: res.data })
     })
     .catch(error => {
          console.log(error)
-         dispatch({ type: SINGLE_LOG_FAILURE })
+         dispatch({ type: GLOBAL_LOG_FAILURE })
     })
 }

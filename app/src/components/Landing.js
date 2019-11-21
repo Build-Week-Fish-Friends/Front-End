@@ -4,7 +4,7 @@ import Login from './Login'
 import SignUp from './Signup'
 const Landing = () => {
 
-    return (
+    return ( 
         <>
             <Login />
                 <br />

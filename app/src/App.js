@@ -10,6 +10,7 @@ import Landing from './components/Landing'
 import LogForm from './components/LogForm'
 import EditLogForm from './components/EditLogForm'
 import LogList from './components/LogList'
+import AreaCard from './components/AreaCard'
 import './App.css';
 
 function App() {
@@ -24,11 +25,14 @@ function App() {
 
 
           <PrivateRoute path="/dashboard" component={Dashboard} />
+
+          {/* user Logs */}
           <PrivateRoute path="/add" component={LogForm} />
           <PrivateRoute exact path='/edit-log/:id' component={EditLogForm} />
-
           <PrivateRoute exact path="/logs/:id" component={LogList}/>
-          <PrivateRoute exact path='' />
+
+          {/* local logs */}
+          <PrivateRoute exact path='/logs/area/:id' component={AreaCard} /> 
       </Switch>
 
       <footer>

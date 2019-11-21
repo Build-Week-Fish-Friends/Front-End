@@ -48,7 +48,7 @@ const EditLogForm = (props) => {
                     */}
                 <label># of Fish: </label>
                 <input onChange={handleChange} text='number' name='fishCount' placeholder='4'  value={editLog.fishCount}/>
-                <button type='submit' onClick={() => props.editLog(editLog,  props.match.params.id, props.history)}>Add Log</button>
+                <button type='submit' onClick={() => props.editLog(editLog,  props.match.params.id, props.history)}>Update Log</button>
             </form>
         </div>
 
