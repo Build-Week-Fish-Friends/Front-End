@@ -105,7 +105,7 @@ export const DELETE_SUCCESS = 'delete_complete'
 
 export const deleteEvent = (id, history) => (dispatch) => {
     axiosWithAuth()
-        .delete(`https://bw-corporate-event-planner.herokuapp.com/api/events/${id}`)
+        .delete(`https://fish-friends-resources.herokuapp.com/api/logs/${id}`)
         .then(res => {
             console.log(res)
             dispatch({ type: DELETE_SUCCESS})
@@ -121,7 +121,7 @@ export const SINGLE_LOG_START = "beep"
 export const SINGLE_LOG_SUCCESS = "beep"
 export const SINGLE_LOG_FAILURE= "beep"
 
-export const fetchSingleEvent = (id) => (dispatch) => {
+export const fetchLocalLog = (id) => (dispatch) => {
     dispatch({type: SINGLE_LOG_START})
     axiosWithAuth()
     .get(`https://fish-friends-resources.herokuapp.com/api/logs/area/${id}`)

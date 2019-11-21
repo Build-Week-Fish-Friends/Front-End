@@ -25,9 +25,9 @@ function App() {
 
 
           <PrivateRoute path="/dashboard" component={Dashboard} />
-          <PrivateRoute path="/add" component={LogForm} />
 
           {/* user Logs */}
+          <PrivateRoute path="/add" component={LogForm} />
           <PrivateRoute exact path='/edit-log/:id' component={EditLogForm} />
           <PrivateRoute exact path="/logs/:id" component={LogList}/>
 
