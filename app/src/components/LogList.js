@@ -14,18 +14,15 @@ function LogList(props){
         <div className='LogDiv'> 
         <div className="LogRowFake">
              <div className="LogCol">
-                  <h4>Log Location:</h4>
+                  <h4>Bait Used:</h4>
              </div>
              <div className="LogCol">
-                  <h4>Log </h4>
+                  <h4>Species:</h4>
              </div>
              <div className="LogCol">
-                  <h4>Log Budget</h4>
+                  <h4>#Fish Caught: </h4>
              </div>
-             <div className="LogCol">
-                  <h4>Date of Log</h4>
-             </div>
-         </div>
+
             {/* {props.logList.map(item => {
                 return (
                 <NavLink to={`/logs/${item.id}`}>
@@ -33,6 +30,7 @@ function LogList(props){
                 </NavLink>
                 )
             })} */}
+         </div>
          </div>
     )
 }
