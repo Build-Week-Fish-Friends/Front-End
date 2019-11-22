@@ -13,7 +13,6 @@ export const login = (credentials, history) => (dispatch) => {
         .then(res => {
             console.log(res)
             localStorage.setItem("token", res.data.token)
-            localStorage.setItem("id", res.data.id)
             dispatch({type: LOGIN_SUCCESS})
             history.push('/dashboard')
         })
@@ -67,11 +66,13 @@ export const FETCH_FAILURE = "FETCH_FAILURE"
 
 export const fetchData = () => (dispatch) => {
      dispatch({type: FETCH_START})
-     let id = parseInt(localStorage.getItem('id'))
+
      axiosWithAuth()
-     .get(`https://fish-friends-resources.herokuapp.com/api/logs/${id}`)
+     .get(`https://fish-friends-resources.herokuapp.com/api/logs/`)
      .then(res => {
           console.log(res)
+        //   localStorage.setItem('userId', res.data.id)
+        //   localStorage.setItem('areaId', res.data.area_id)
           dispatch({type: FETCH_SUCCESS, payload: res.data})
      })
      .catch(error => {
@@ -104,7 +105,7 @@ export const editLog = (updateLog , id, history) => (dispatch) => {
 export const DELETE_START = "delete_start"
 export const DELETE_SUCCESS = 'delete_complete'
 
-export const deleteEvent = (id, history) => (dispatch) => {
+export const deleteLog = (id, history) => (dispatch) => {
     axiosWithAuth()
         .delete(`https://fish-friends-resources.herokuapp.com/api/logs/${id}`)
         .then(res => {
@@ -125,7 +126,7 @@ export const GLOBAL_LOG_FAILURE= "GLOBAL_FAIL"
 export const fetchLocalLog = (id) => (dispatch) => {
     dispatch({type: GLOBAL_LOG_START})
     axiosWithAuth()
-    .get(`https://fish-friends-resources.herokuapp.com/api/logs/area/${id}`)
+    .get(`https://fish-friends-resources.herokuapp.com/api/logs/area/1`)
     .then(res => {
          console.log(res.data)
          dispatch({ type: GLOBAL_LOG_SUCCESS, payload: res.data })

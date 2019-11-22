@@ -28,10 +28,14 @@ const initialState = {
    isRegistering: false,
    isCreatingLog: false,
    hasCreatedLog: false,
-   logList: [],
+   logList: [
+     //    {location: "Lunar Lake", startTime: "5am", fishCount: "0"}
+     ],
    isUpdating:false,
    isDeleted:false,
-   locations: [],
+   locations: [
+     //    {name: "Swamp", duration: "11pm", num_catch: "0"}
+     ],
 }
 
 export const reducer = (state = initialState, action ) => {

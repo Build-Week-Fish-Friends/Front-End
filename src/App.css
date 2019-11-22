@@ -118,3 +118,44 @@ footer span {
   margin-left: 50%;
   color: #0a6ea6;
 } 
+
+
+.LogDiv{
+  width: 80%;
+  margin: 3% auto;
+}
+
+.LogRow{
+  margin: 2% auto;
+  display: flex;
+  justify-content: space-evenly;
+  background: #e1e2e6;
+  padding: 10px 40px;
+  border-radius: 18px;
+  color: #343740;
+}
+
+.LogRow:hover{
+  background-color: #0a6ea6;
+  color: #ecedf2;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+
+.LogRowFake{
+  margin: 2% auto;
+  display: flex;
+  justify-content: space-evenly;
+  background: #343740;
+  padding: 10px 40px;
+  border-radius: 18px;
+  color: #ecedf2;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.areaDiv{
+  margin: 20% auto;
+  color: black;
+  background: #858484;
+  border: 1px black solid;
+}

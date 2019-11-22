@@ -1,4 +1,3 @@
-import Navbar from "./NavBar"
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -8,15 +7,15 @@ import '../App.css'
 
 const AreaCard = props => {
 
-    let id = props.match.params.id
-
     useEffect(() => {
-        props.fetchLocalLog(id)
+        props.fetchLocalLog()
     }, [])
 
+    console.log(props)
+
     return (
-        <>
-            {/* <Navbar /> */}
+        <div className="areaDiv">
+
             { props.locations.map( item => {
                 return(
 
@@ -28,7 +27,7 @@ const AreaCard = props => {
                     </div>
                 )
             })}
-        </>
+        </div>
     )
 }
 
