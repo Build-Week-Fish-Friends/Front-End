@@ -12,13 +12,13 @@ function LogCard(props){
     return (
         <div className="LogRow">
         <div className="LogCol">
-             <h4>{props.logList.location}</h4>
+             <h4>{props.logList.name}</h4>
         </div>
         <div className="LogCol">
-            <h4>{props.logList.startTime}</h4>
+            <h4>{props.logList.species}</h4>
         </div>
         <div className="LogCol">
-        <h4>{props.logList.fishCount}</h4>
+        <h4>{props.logList.num_catch}</h4>
         </div>
         <div className="LogCol">
         <button className="editBtn" onClick={() => props.history.push(`/edit-event/${id}`)}>Edit</button>
