@@ -1,16 +1,17 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import {fetchData} from '../actions'
-import {NavLink} from 'react-router-dom'
 import LogCard from './LogCard'
+import { NavLink } from 'react-router-dom';
 
 import '../App.css'
 
 function LogList(props){
 
     useEffect(() => {
-        props.fetchData()
-    },[])
+            props.fetchData()
+        },[])
+    console.log(props)
     return (
         <div className='LogDiv'> 
         <div className="LogRowFake">
@@ -23,14 +24,18 @@ function LogList(props){
              <div className="LogCol">
                   <h4>#Fish Caught: </h4>
              </div>
-{/* 
-            {props.logList.map(item => {
-                return (
-                <NavLink to={`/logs/${item.id}`}>
-                    <LogCard logList={item} key={item.id}/>
-                </NavLink>
-                )
-            })} */}
+                {
+                    props.logList.map(item => {
+                        return (
+                            <>
+                                <NavLink to={`/logs/${item.id}`}>
+                                    <LogCard logList={item} key={item.id} />
+                                </NavLink>
+                            </>
+                        )
+                        })
+                }
+                   
          </div>
          </div>
     )
