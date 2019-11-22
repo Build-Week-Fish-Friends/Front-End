@@ -24,7 +24,10 @@ function LogList(props){
              <div className="LogCol">
                   <h4>#Fish Caught: </h4>
              </div>
-                {
+
+                   
+         </div>
+         {
                     props.logList.map(item => {
                         return (
                             <>
@@ -35,8 +38,6 @@ function LogList(props){
                         )
                         })
                 }
-                   
-         </div>
          </div>
     )
 }

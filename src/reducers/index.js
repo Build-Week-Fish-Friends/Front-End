@@ -29,12 +29,12 @@ const initialState = {
    isCreatingLog: false,
    hasCreatedLog: false,
    logList: [
-     //    {location: "Lunar Lake", startTime: "5am", fishCount: "0"}
+        {location: "Lunar Lake", startTime: "5am", fishCount: "0"}
      ],
    isUpdating:false,
    isDeleted:false,
    locations: [
-     //    {name: "Swamp", duration: "11pm", num_catch: "0"}
+        {name: "Swamp", duration: "11pm", num_catch: "0"}
      ],
 }
 
